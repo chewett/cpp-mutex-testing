@@ -8,7 +8,7 @@ class Bank {
 
     public:
         Bank(int);
-        void changeCoins(int);
+        bool changeCoins(int);
         int getCoins();
 
 };
