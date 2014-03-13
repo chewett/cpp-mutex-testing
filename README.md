@@ -23,4 +23,7 @@ this hasnt been performed
 
 ./test_dining
 
-This mostly works to run the dining philosphers problem
+This is used to run the dining philosphers problem. Currently there is an issue
+where it will deadlock if they all pick up one fork at a time. This can be fixed
+by making one person pick up the fork in a different order. Currently left
+as an exercise to the reader
