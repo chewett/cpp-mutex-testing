@@ -19,4 +19,8 @@ Is the same program with a fixed bank, using mutexes around all
 the methods. This actually makes the program singlethreaded but
 fixes issues as the above program has. Further optimisations can
 be made to reduce the critical region size, but for demonstration
-this hasnt been performed.
+this hasnt been performed
+
+./test_dining
+
+This mostly works to run the dining philosphers problem
