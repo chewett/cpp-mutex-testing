@@ -10,9 +10,11 @@ bool Bank::changeCoins(int change) {
     int curCoins = coins;
     int newCoins = curCoins + change;
     if(newCoins < 0) {
+        printf("Not enough money, only %i in bank, tried to change by %i\n", coins, change);
         return false;
     }else{
         coins = newCoins;
+        printf("Changed value in bank, Currently %i, previously %i\n", coins, curCoins);
         return true;
     }
 

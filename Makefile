@@ -1,6 +1,6 @@
 CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 $(INC_DIRS)
 
-LIBS = 
+LIBS = -pthread
 TARGETS = test_broken_bank
 OBJS = *.o
 NON_MAIN = brokenbank.o

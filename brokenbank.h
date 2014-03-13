@@ -1,3 +1,5 @@
+#include <cstdio>
+
 #ifndef BANK_H_
 #define BANK_H_
 
