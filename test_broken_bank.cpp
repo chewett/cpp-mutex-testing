@@ -15,7 +15,7 @@ void* transaction(void* args) {
 int main(void) {
     std::printf("Testing working\n");
 
-    int values[TRANS_NO] = {-500, 1000, -1500, 300, -2000, -5000, 1000, 1500, 2000, -1000};
+    int values[TRANS_NO] = {1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000};
     pthread_t threads[TRANS_NO];
     
     for(int i = 0; i<TRANS_NO; i++) {

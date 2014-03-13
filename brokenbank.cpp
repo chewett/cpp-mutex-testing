@@ -14,7 +14,7 @@ bool Bank::changeCoins(int change) {
         return false;
     }else{
         coins = newCoins;
-        printf("Changed value in bank, Currently %i, previously %i\n", coins, curCoins);
+        printf("Changed value in bank, Currently %i, previously %i\n", newCoins, curCoins);
         return true;
     }
 
