@@ -8,28 +8,44 @@ Chopstick chop[] = {Chopstick(0), Chopstick(1), Chopstick(2), Chopstick(3), Chop
 
 void pickUp(int stick, int person) {
     chop[stick].pickUp(person);
-    printf("p:%i c:%i picked up\n", person, stick);
+    printf("{'p' : '%i', 'c' : '%i', 'type': 'up'}\n", person, stick);
 }
 
 void putDown(int stick, int person) {
-    printf("p:%i c:%i dropping\n", person, stick);
+    printf("{'p' : '%i', 'c' : '%i', 'type' : 'down'}\n", person, stick);
     chop[stick].putDown();
 }
 
 
 void* person(void* args) {
     int value = *(int*)(&args);
-    while(true) {
-        printf("p:%i picking up\n", value);
-        pickUp((value + 1) % 5, value);
+    int times = 0;
+    while(times < 6) {
+        times++;
+        if(value == 0) {
+
+        //printf("p:%i picking up\n", value);
+        pickUp((value) % 5, value);
         pickUp((value + 4) % 5, value);
-        printf("p:%i im eating\n", value);
-        sleep(1);
-        printf("p:%i start putting down\n", value);
-        putDown((value + 1) % 5, value);
+        printf("{'p' : '%i', 'eat': True}\n", value);
+        sleep(0);
+        //printf("p:%i start putting down\n", value);
+        putDown((value) % 5, value);
         putDown((value + 4) % 5, value);
-        printf("p:%i thinking\n", value);
-        sleep(1.5);
+        printf("{'p' : '%i', 'think' : True}\n", value);
+        sleep(0);
+        }else{
+            pickUp((value+ 4) % 5, value);
+            pickUp((value) % 5, value);
+            printf("{'p' : '%i', 'eat': True}\n", value);
+            sleep(1);
+            //printf("p:%i start putting down\n", value);
+            putDown((value + 4) % 5, value);
+            putDown((value) % 5, value);
+            printf("{'p' : '%i', 'think' : True}\n", value);
+            sleep(1.5);
+        }
+
     }
 
     pthread_exit(NULL);
